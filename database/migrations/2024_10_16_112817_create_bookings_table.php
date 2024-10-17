@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('bookings', function (Blueprint $table) {
             $table->id();
             $table->integer('user_id'); // ID người booking phòng
+            $table->integer('status_id'); // Status
             $table->dateTime('check_in_date');
             $table->dateTime('check_out_date');
             $table->integer('VAT'); // Phần trăm thuế VAT
