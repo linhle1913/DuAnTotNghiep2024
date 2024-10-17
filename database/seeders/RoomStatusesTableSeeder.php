@@ -23,32 +23,32 @@ class RoomStatusesTableSeeder extends Seeder
                 'status_id' => 1, // 1 - Trạng thái tốt
                 'description' => 'Phòng trong tình trạng tốt.',
                 'user_id' => 1, // ID người báo cáo, có thể thay đổi
-                'create_at' => now(),
-                'update_at' => now(),
+                'created_at' => now(),
+                'updated_at' => now(),
             ],
             [
                 'room_id' => 2,
                 'status_id' => 2, // 2 - Trạng thái cần sửa chữa
                 'description' => 'Phòng cần sửa chữa một số thiết bị.',
                 'user_id' => 2,
-                'create_at' => now(),
-                'update_at' => now(),
+                'created_at' => now(),
+                'updated_at' => now(),
             ],
             [
                 'room_id' => 3,
                 'status_id' => 3, // 3 - Trạng thái không sử dụng
                 'description' => 'Phòng hiện tại không thể sử dụng.',
                 'user_id' => 3,
-                'create_at' => now(),
-                'update_at' => now(),
+                'created_at' => now(),
+                'updated_at' => now(),
             ],
             [
                 'room_id' => 4,
                 'status_id' => 1,
                 'description' => 'Phòng đã được kiểm tra và trong tình trạng tốt.',
                 'user_id' => 1,
-                'create_at' => now(),
-                'update_at' => now(),
+                'created_at' => now(),
+                'updated_at' => now(),
             ],
         ];
 
