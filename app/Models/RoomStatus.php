@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class RoomStatus extends Model
 {
     use HasFactory;
+    protected $table = 'room_statuses';
+
+    public function rooms()
+    {
+        return $this->hasMany(Room::class);
+    }
 }
