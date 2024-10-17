@@ -26,6 +26,7 @@ class BookingsTableSeeder extends Seeder
 
             DB::table('bookings')->insert([
                 'user_id' => $faker->randomElement($userIds),
+                'status_id' => '1',
                 'check_in_date' => $checkInDate,
                 'check_out_date' => $checkOutDate,
                 'VAT' => 10, // Giả định VAT là 10%
