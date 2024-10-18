@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\Booking\BookingController;
 use App\Http\Controllers\ClassController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
@@ -54,12 +55,20 @@ Route::prefix('admin')
                 Route::delete('/{id}/destroy', [ClassController::class, 'destroy'])->name('destroy');
             });
 
-        Route::prefix('user')
-            ->as('user.')
-            ->group(function () {
-                Route::get('/', [UserController::class, 'index'])->name('index');
-                
-            });
+        // Route::prefix('user')
+        //     ->as('user.')
+        //     ->group(function () {
+        //         Route::get('/', [UserController::class, 'index'])->name('index');
+
+        //     });
+        Route::prefix('booking')
+        ->as('booking.')
+        ->group(function(){
+            Route::get('/', [BookingController::class, 'index'])->name('index');
+            Route::get('/list', [BookingController::class, 'list'])->name('list');
+            Route::get('/detail/{id}', [BookingController::class, 'detail'])->name('detail');
+        });
+
     });
 
 Auth::routes();
