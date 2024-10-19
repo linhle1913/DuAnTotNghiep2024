@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 @section('title')
-Datatables | Velzon - Admin & Dashboard Template
+Detail Payment {{$payment->id}}
 @endsection
 @section('css')
 <meta charset="utf-8" />
@@ -37,7 +37,7 @@ Datatables | Velzon - Admin & Dashboard Template
 
 <div class="card ">
     <div class="card-header">
-        <h4 class="card-title mb-0">Loại phòng của thanh toán</h4>
+        <h4 class="card-title mb-0">Thông tin của thanh toán</h4>
     </div><!-- end card header -->
     <div class="card-body">
         <div id="users">
@@ -73,16 +73,6 @@ Datatables | Velzon - Admin & Dashboard Template
     </div><!-- end card body -->
 </div>
 <!-- end card -->
-
-
-<!-- @foreach ($payment->booking->detailBookings as $detailBooking)
-<h4>Room Type: {{ $detailBooking->roomType->type }}</h4>
-<p>Price for night: {{$detailBooking->roomType->price_per_night}}vnđ</p>
-@foreach ($detailBooking->roomType->roomTypeImages as $image)
-<img src="{{ $image->image_url }}" alt="" width="80px"> <br>
-@endforeach
-@endforeach -->
-
 
 
 @endsection

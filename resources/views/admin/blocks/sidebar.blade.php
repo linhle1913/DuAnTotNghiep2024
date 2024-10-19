@@ -84,11 +84,17 @@
                          <i class="fas fa-users"></i> <!-- Biểu tượng cho danh sách người dùng -->
                          Danh sách tài khoản
                      </a>
-                 </li> --}}
+                 </li>
                  <li class="nav-item">
                     <a href="{{ route('admin.booking.index') }}" class="nav-link" data-key="t-analytics">
                         <i class="fas fa-address-book "></i> <!-- Biểu tượng cho trang chủ -->
                         Booking
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('admin.payment.index') }}" class="nav-link" data-key="t-analytics">
+                        <i class="fas fa-address-book "></i> <!-- Biểu tượng cho trang chủ -->
+                        Payments
                     </a>
                 </li>
                  <li class="nav-item">

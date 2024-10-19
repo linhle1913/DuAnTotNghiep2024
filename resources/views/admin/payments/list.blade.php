@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 @section('title')
-Datatables | Velzon - Admin & Dashboard Template
+List Payments
 @endsection
 @section('css')
 <meta charset="utf-8" />
