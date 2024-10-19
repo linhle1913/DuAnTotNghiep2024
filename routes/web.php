@@ -1,5 +1,5 @@
 <?php
-
+use App\Http\Controllers\Admin\Payment\PaymentController;
 use App\Http\Controllers\Admin\Booking\BookingController;
 use App\Http\Controllers\ClassController;
 use App\Http\Controllers\DashboardController;
@@ -23,7 +23,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-
 
 Route::prefix('admin')
     ->as('admin.')
@@ -55,12 +54,13 @@ Route::prefix('admin')
                 Route::delete('/{id}/destroy', [ClassController::class, 'destroy'])->name('destroy');
             });
 
-        // Route::prefix('user')
-        //     ->as('user.')
-        //     ->group(function () {
-        //         Route::get('/', [UserController::class, 'index'])->name('index');
+        Route::prefix('payment')
+            ->as('payment.') 
+            ->group(function () {
+                Route::get('/', [PaymentController::class, 'index']);      
+                Route::get('/{id}/show', [PaymentController::class, 'show'])->name('show');
+           });
 
-        //     });
         Route::prefix('booking')
         ->as('booking.')
         ->group(function(){

@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class RoomType extends Model
 {
     use HasFactory;
+
     protected $table = 'room_types';
 
     public function rooms()
@@ -19,4 +20,5 @@ class RoomType extends Model
     {
         return $this->hasMany(RoomTypeImage::class);
     }
+
 }

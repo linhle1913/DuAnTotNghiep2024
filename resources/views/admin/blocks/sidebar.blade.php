@@ -68,19 +68,19 @@
                  </li>
 
                  <li class="nav-item">
-                     <a href="{{ route('admin.class.index') }}" class="nav-link" data-key="t-analytics">
+                     <a href="" class="nav-link" data-key="t-analytics">
                          <i class="fas fa-chalkboard"></i> <!-- Icon for class list -->
                          Danh sách lớp học
                      </a>
                  </li>
                  <li class="nav-item">
-                     <a href="{{ route('admin.student.index') }}" class="nav-link" data-key="t-analytics">
+                     <a href="" class="nav-link" data-key="t-analytics">
                          <i class="fas fa-user-graduate"></i> <!-- Icon for student list -->
                          Danh sách Sinh viên
                      </a>
                  </li>
-                 {{-- <li class="nav-item">
-                     <a href="{{ route('admin.user.index') }}" class="nav-link" data-key="t-analytics">
+                 <li class="nav-item">
+                     <a href="" class="nav-link" data-key="t-analytics">
                          <i class="fas fa-users"></i> <!-- Biểu tượng cho danh sách người dùng -->
                          Danh sách tài khoản
                      </a>
