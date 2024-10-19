@@ -8,7 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class RoomType extends Model
 {
     use HasFactory;
-    protected $table = 'room_types'; //merge thì lấy chỗ này nhé, sửa lại tên bảng
+
+    protected $table = 'room_types';
 
     public function rooms()
     {

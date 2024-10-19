@@ -19,11 +19,12 @@ class Booking extends Model
     {
         return $this->belongsTo(Room::class, 'room_id');
     }
+
     public function detailBookings()
     {
         return $this->hasMany(DetailBooking::class); 
     }
-    
+
     public function status()
 {
     return $this->belongsTo(Status::class, 'status_id');

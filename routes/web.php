@@ -1,6 +1,6 @@
 <?php
-
 use App\Http\Controllers\Admin\Payment\PaymentController;
+use App\Http\Controllers\Admin\Booking\BookingController;
 use App\Http\Controllers\ClassController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
@@ -23,7 +23,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-
 
 Route::prefix('admin')
     ->as('admin.')
@@ -54,17 +53,21 @@ Route::prefix('admin')
                 Route::put('/{id}/update', [ClassController::class, 'update'])->name('update');
                 Route::delete('/{id}/destroy', [ClassController::class, 'destroy'])->name('destroy');
             });
-        
-            Route::prefix('payment')
+
+        Route::prefix('payment')
             ->as('payment.') 
             ->group(function () {
                 Route::get('/', [PaymentController::class, 'index']);      
                 Route::get('/{id}/show', [PaymentController::class, 'show'])->name('show');
-                Route::post('/store', [StudentController::class, 'store'])->name('store');
-                Route::get('/{id}/edit', [StudentController::class, 'edit'])->name('edit');
-                Route::put('/{id}/update', [StudentController::class, 'update'])->name('update');
-                Route::delete('/{id}/destroy', [StudentController::class, 'destroy'])->name('destroy');
-            });
+           });
+
+        Route::prefix('booking')
+        ->as('booking.')
+        ->group(function(){
+            Route::get('/', [BookingController::class, 'index'])->name('index');
+            Route::get('/list', [BookingController::class, 'list'])->name('list');
+            Route::get('/detail/{id}', [BookingController::class, 'detail'])->name('detail');
+        });
 
     });
 
