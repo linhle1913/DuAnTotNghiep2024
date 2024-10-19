@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class RoomType extends Model
 {
     use HasFactory;
-    protected $table = 'rooms_type';
+    protected $table = 'room_types'; //merge thì lấy chỗ này nhé, sửa lại tên bảng
 
     public function rooms()
     {
@@ -19,4 +19,5 @@ class RoomType extends Model
     {
         return $this->hasMany(RoomTypeImage::class);
     }
+
 }

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\Payment\PaymentController;
 use App\Http\Controllers\ClassController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
@@ -53,13 +54,18 @@ Route::prefix('admin')
                 Route::put('/{id}/update', [ClassController::class, 'update'])->name('update');
                 Route::delete('/{id}/destroy', [ClassController::class, 'destroy'])->name('destroy');
             });
-
-        Route::prefix('user')
-            ->as('user.')
+        
+            Route::prefix('payment')
+            ->as('payment.') 
             ->group(function () {
-                Route::get('/', [UserController::class, 'index'])->name('index');
-                
+                Route::get('/', [PaymentController::class, 'index']);      
+                Route::get('/{id}/show', [PaymentController::class, 'show'])->name('show');
+                Route::post('/store', [StudentController::class, 'store'])->name('store');
+                Route::get('/{id}/edit', [StudentController::class, 'edit'])->name('edit');
+                Route::put('/{id}/update', [StudentController::class, 'update'])->name('update');
+                Route::delete('/{id}/destroy', [StudentController::class, 'destroy'])->name('destroy');
             });
+
     });
 
 Auth::routes();

@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Booking extends Model
 {
     use HasFactory;
-    protected $table = 'booking';
+    protected $table = 'bookings';
 
     public function user()
     {
@@ -18,6 +18,10 @@ class Booking extends Model
     public function room()
     {
         return $this->belongsTo(Room::class, 'room_id');
+    }
+    public function detailBookings()
+    {
+        return $this->hasMany(DetailBooking::class); 
     }
     
     public function status()
