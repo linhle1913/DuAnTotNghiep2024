@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\CheckInCheckOutController;
 use App\Http\Controllers\ClassController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
@@ -59,6 +60,18 @@ Route::prefix('admin')
             ->group(function () {
                 Route::get('/', [UserController::class, 'index'])->name('index');
                 
+            });
+
+            Route::prefix('booking')
+            ->as('booking.')
+            ->group(function () {
+                Route::get('/', [CheckInCheckOutController::class, 'index'])->name('index');
+                Route::get('{id}/checkin', [CheckInCheckOutController::class, 'checkin'])->name('checkin');
+                Route::post('{id}/checkInRequest', [CheckInCheckOutController::class, 'checkInRequest'])->name('checkInRequest');
+
+                // Định nghĩa check-out
+                Route::get('{id}/checkout', [CheckInCheckOutController::class, 'checkOut'])->name('checkOut');
+                Route::post('{id}/checkOutRequest', [CheckInCheckOutController::class, 'checkOutRequest'])->name('checkOutRequest');
             });
     });
 
