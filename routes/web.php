@@ -57,7 +57,7 @@ Route::prefix('admin')
         Route::prefix('payment')
             ->as('payment.') 
             ->group(function () {
-                Route::get('/', [PaymentController::class, 'index']);      
+                Route::get('/', [PaymentController::class, 'index'])->name('index');      
                 Route::get('/{id}/show', [PaymentController::class, 'show'])->name('show');
            });
 
