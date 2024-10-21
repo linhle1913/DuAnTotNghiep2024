@@ -18,6 +18,7 @@ class PaymentController extends Controller
     public function index()
     {
         $payments = Payment::query()->get();
+        $status = "";
         foreach ($payments as $payment) {
             $status = Status::where('id', '=', $payment->status_id)->first();
         }
