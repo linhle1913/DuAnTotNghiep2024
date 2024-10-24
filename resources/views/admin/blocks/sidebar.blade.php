@@ -68,23 +68,42 @@
                  </li>
 
                  <li class="nav-item">
-                     <a href="{{ route('admin.class.index') }}" class="nav-link" data-key="t-analytics">
+                     <a href="" class="nav-link" data-key="t-analytics">
                          <i class="fas fa-chalkboard"></i> <!-- Icon for class list -->
                          Danh sách lớp học
                      </a>
                  </li>
                  <li class="nav-item">
-                     <a href="{{ route('admin.student.index') }}" class="nav-link" data-key="t-analytics">
+                     <a href="" class="nav-link" data-key="t-analytics">
                          <i class="fas fa-user-graduate"></i> <!-- Icon for student list -->
                          Danh sách Sinh viên
                      </a>
                  </li>
                  <li class="nav-item">
-                     <a href="{{ route('admin.user.index') }}" class="nav-link" data-key="t-analytics">
+                     <a href="" class="nav-link" data-key="t-analytics">
                          <i class="fas fa-users"></i> <!-- Biểu tượng cho danh sách người dùng -->
                          Danh sách tài khoản
                      </a>
                  </li>
+
+                 <li class="nav-item">
+                     <a href="{{ route('admin.booking.index') }}" class="nav-link" data-key="t-analytics">
+                         <i class="fas fa-calendar-check"></i> <!-- Biểu tượng phù hợp hơn cho Check In - Check Out -->
+                         Danh sách Check In - Check Out
+                     </a>
+                 </li>
+                 <li class="nav-item">
+                    <a href="{{ route('admin.booking.index') }}" class="nav-link" data-key="t-analytics">
+                        <i class="fas fa-address-book "></i> <!-- Biểu tượng cho trang chủ -->
+                        Booking
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('admin.payment.index') }}" class="nav-link" data-key="t-analytics">
+                        <i class="fas fa-address-book "></i> <!-- Biểu tượng cho trang chủ -->
+                        Payments
+                    </a>
+                </li>
                  <li class="nav-item">
                      <a href="{{ route('home') }}" class="nav-link" data-key="t-analytics">
                          <i class="fas fa-home"></i> <!-- Icon for home page -->
