@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Token extends Model
 {
     use HasFactory;
-    protected $table = 'tokens';
+    protected $table = 'token';
 
     public function user()
     {

@@ -22,8 +22,14 @@ class Booking extends Model
 
     public function detailBookings()
     {
-        return $this->hasMany(DetailBooking::class); 
+        return $this->hasMany(DetailBooking::class);
     }
+
+    protected $casts = [
+        'check_in_date' => 'datetime',
+        'check_out_date' => 'datetime',
+    ];
+    public $timestamps = false;
 
     public function status()
 {

@@ -10,11 +10,6 @@ class Room extends Model
     use HasFactory;
     protected $table = 'rooms';
 
-    public function bookings()
-    {
-        return $this->hasMany(Booking::class);
-    }
-
     public function roomType()
     {
         return $this->belongsTo(RoomType::class, 'room_type_id');
@@ -29,4 +24,10 @@ class Room extends Model
     {
         return $this->hasMany(DamageReport::class);
     }
+
+    public function detailBooking()
+    {
+        return $this->hasMany(DetailBooking::class, 'room_id');
+    }
+    public $timestamps = false;
 }
