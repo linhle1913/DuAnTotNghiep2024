@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Booking extends Model
 {
     use HasFactory;
-    protected $table = 'booking';
+    protected $table = 'bookings';
 
     public function user()
     {
@@ -19,7 +19,18 @@ class Booking extends Model
     {
         return $this->belongsTo(Room::class, 'room_id');
     }
-    
+
+    public function detailBookings()
+    {
+        return $this->hasMany(DetailBooking::class);
+    }
+
+    protected $casts = [
+        'check_in_date' => 'datetime',
+        'check_out_date' => 'datetime',
+    ];
+    public $timestamps = false;
+
     public function status()
 {
     return $this->belongsTo(Status::class, 'status_id');

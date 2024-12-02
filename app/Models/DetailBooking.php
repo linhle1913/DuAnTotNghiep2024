@@ -12,7 +12,7 @@ class DetailBooking extends Model
 
     public function booking()
     {
-        return $this->belongsTo(Booking::class, 'booking_id');
+        return $this->belongsTo( Booking::class, 'booking_id');
     }
 
     public function room()
@@ -24,4 +24,14 @@ class DetailBooking extends Model
     {
         return $this->belongsTo(RoomType::class, 'room_type_id');
     }
+
+    protected $fillable = [
+        'booking_id',
+        'room_id',
+        'room_type_id',
+        'CCCD',
+        'actual_number_people',
+    ];
+
+    public $timestamps = false;
 }
